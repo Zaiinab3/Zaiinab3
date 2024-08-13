@@ -1,0 +1,90 @@
+# WeatherApp
+# Weather Information App.
+This Java-based desktop application provides weather information for a given location using the OpenWeatherMap API. It displays current weather conditions and an 8-day weather forecast. Users can also switch between Celsius and Fahrenheit units and view their search history
+## Features
+
+- Fetches current weather information for a specified location.
+- Displays an 8-day weather forecast.
+- Allows switching between Celsius and Fahrenheit units.
+- Maintains a search history for quick access to previously searched locations.
+
+## Prerequisites
+
+- Java Development Kit (JDK) 8 or higher.
+- OpenWeatherMap API key.
+
+## Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-repo/weather-app.git
+    cd weather-app
+    ```
+
+2. Replace the `API_KEY` in `WeatherAPIService.java` with your OpenWeatherMap API key.
+
+## Usage
+
+1. Compile the Java files:
+    ```sh
+    javac WeatherApp.java WeatherAPIService.java
+    ```
+
+2. Run the application:
+    ```sh
+    java WeatherApp
+    ```
+
+## Class Definition and Fields
+WeatherApp is a public class that represents the weather application.
+It contains several private fields:
+JFrame frame: The main window of the application.
+JTextField locationField: A text field where users can enter the location for weather information.
+JTextArea weatherInfoArea: A text area to display current weather information.
+JLabel iconLabel: A label to display the weather icon.
+JLabel forecastLabel: A label to display the weather forecast.
+JComboBox<String> unitComboBox: A combo box to select the temperature unit (Celsius or Fahrenheit).
+DefaultListModel<String> searchHistoryModel: A model for storing and managing the search history.
+JList<String> searchHistoryList: A list to display past searches.
+List<String> searchHistory: A list to keep track of all searched locations.
+String previousDay: A string to keep track of the last displayed day in the forecast.
+
+## Constructor
+public WeatherApp(): The constructor initializes and sets up the GUI components.
+frame: Initializes the main window and sets its size and default close operation.
+mainPanel: Creates a panel with a GridBagLayout to organize the components.
+titleLabel: A label displaying the app's title, centered and styled.
+locationField: A text field for inputting the location.
+getWeatherButton: A button to trigger the weather data retrieval.
+iconLabel: A label for displaying the weather icon.
+weatherInfoArea: A text area to show weather details.
+unitComboBox: A combo box for selecting the temperature unit.
+searchHistoryList: A list displaying the search history, with a mouse listener for selecting past searches.
+forecastLabel: A label for displaying the 8-day weather forecast.
+
+## Methods
+private void getWeather(String location): Fetches weather data for the specified location and updates the UI. It uses WeatherAPIService to get the data and updates the search history if necessary.
+
+private void displayWeatherInfo(JSONObject weatherData): Updates the weather information display based on the provided weather data. It sets the weather icon, updates the text area with weather details, and fetches the forecast.
+
+private void displayWeatherForecast(JSONObject forecastData): Processes and displays the 8-day weather forecast. It sorts the forecast data by date and formats it for display. It updates the forecastLabel with HTML-formatted forecast information.
+private String formatForecast(String dateTime, double temp, String description): Formats the forecast data into a string suitable for HTML display, including the day of the week, temperature, and weather description
+
+## Example
+
+Here is an example of the application in use:
+
+1. Enter a location (e.g., "London") in the text field.
+2. Click the "Search" button to fetch the weather data.
+3. The current weather information will be displayed, including temperature, humidity, wind speed, and conditions.
+4. The weather forecast will also be displayed below the current weather information.
+5. Use the combo box to switch between Celsius and Fahrenheit units.
+6. View previous searches in the search history list and double-click an entry to view its weather information again.
+
+## Contributing
+
+Feel free to fork the repository and submit pull requests for improvements and new features.
+
+## License
+
+This project is licensed under the MIT License.
