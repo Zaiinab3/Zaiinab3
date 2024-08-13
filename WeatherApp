@@ -1,20 +1,18 @@
 # WeatherApp
 # Weather Information App.
+
 This Java-based desktop application provides weather information for a given location using the OpenWeatherMap API. It displays current weather conditions and an 8-day weather forecast. Users can also switch between Celsius and Fahrenheit units and view their search history
 ## Features
-
 - Fetches current weather information for a specified location.
 - Displays an 8-day weather forecast.
 - Allows switching between Celsius and Fahrenheit units.
 - Maintains a search history for quick access to previously searched locations.
 
 ## Prerequisites
-
 - Java Development Kit (JDK) 8 or higher.
 - OpenWeatherMap API key.
 
 ## Installation
-
 1. Clone the repository:
     ```sh
     git clone https://github.com/your-repo/weather-app.git
@@ -24,7 +22,6 @@ This Java-based desktop application provides weather information for a given loc
 2. Replace the `API_KEY` in `WeatherAPIService.java` with your OpenWeatherMap API key.
 
 ## Usage
-
 1. Compile the Java files:
     ```sh
     javac WeatherApp.java WeatherAPIService.java
@@ -49,7 +46,7 @@ JList<String> searchHistoryList: A list to display past searches.
 List<String> searchHistory: A list to keep track of all searched locations.
 String previousDay: A string to keep track of the last displayed day in the forecast.
 
-## Constructor
+##Constructor
 public WeatherApp(): The constructor initializes and sets up the GUI components.
 frame: Initializes the main window and sets its size and default close operation.
 mainPanel: Creates a panel with a GridBagLayout to organize the components.
